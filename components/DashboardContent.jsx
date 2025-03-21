@@ -162,18 +162,18 @@ const DashboardContent = ({ total, transactions, totalByCategory, totalSpent }) 
 
           <div className='w-full h-[45%] flex flex-col p-4 bg-[#2e2d2d] rounded-xl my-3'>
             <div className="w-full flex justify-between">
-              <span className='text-white font-medium text-xl'>All accounts</span>
+              <span className='text-white font-medium text-base lg:text-xl'>All accounts</span>
               <button className="text-gray-300 text-xs w-[100px] flex items-center justify-center border border-gray-300 rounded-xl h-[25px]">
                 Add account
               </button>
             </div>
-            <span className='text-gray-400'>
+            <span className='text-gray-400 text-xs lg:text-sm'>
               {accountSelected === "bancolombia" ? "Bancolombia ahorros" : accountSelected === "nu" ? "Nu Bank" : "All accounts"}
             </span>
 
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button className="my-4 w-full md:w-[350px]" variant="outline">Select account</Button>
+                <Button className="my-4 w-full md:w-[350px] " variant="outline"><span className="text-sm lg:text-base">Select account</span></Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-56">
                 <DropdownMenuLabel>Your accounts</DropdownMenuLabel>
@@ -202,7 +202,7 @@ const DashboardContent = ({ total, transactions, totalByCategory, totalSpent }) 
 
           <div className='w-full h-[45%] flex flex-col p-4 bg-[#2e2d2d] rounded-xl'>
             <div className="w-full flex justify-between">
-              <span className="text-xl md:text-2xl text-gray-500 mb-4">Overall Goal</span>
+              <span className="text-base xl:text-2xl text-gray-500 mb-4">Overall Goal</span>
               <button className="text-gray-300 text-xs w-[100px] flex items-center justify-center border border-gray-300 rounded-xl h-[25px]">
                 Edit goal
               </button>
@@ -219,7 +219,7 @@ const DashboardContent = ({ total, transactions, totalByCategory, totalSpent }) 
         <div className='w-full max-h-[620px] rounded-xl bg-[#373838] p-4 pt-0 flex flex-col relative'>
           <div className="overflow-y-auto scrollbar-hide pb-6">
             <div className="w-full pt-4 sticky flex bg-[#373838] items-center justify-between top-[-1px]">
-              <h2 className='text-white font-medium text-2xl md:text-3xl mb-8'>Transactions This Month</h2>
+              <h2 className='text-white font-medium text-xl sm:text-2xl xl:text-3xl mb-8'>Transactions This Month</h2>
               <button
                 onClick={() => setShowModal(true)}
                 className="w-[30px] h-[30px] flex items-center justify-center bg-green-400 rounded-full absolute top-5 right-0"
@@ -443,7 +443,7 @@ const DashboardContent = ({ total, transactions, totalByCategory, totalSpent }) 
 
 
         <div className='w-full flex flex-col p-4 h-full rounded-xl bg-[#373838]'>
-          <span className="text-xl md:text-2xl text-gray-500 mb-4">Total Spent by category</span>
+          <span className="text-base lg:text-xl text-gray-500 mb-4">Total Spent by category</span>
             <div className="flex mx-auto space-x-6 h-full justify-between">
               {
                 totalByCategory.map((item, index) => (
@@ -464,7 +464,7 @@ const DashboardContent = ({ total, transactions, totalByCategory, totalSpent }) 
         </div>
         <div className='w-full h-full flex flex-col p-4 rounded-xl bg-[#373838]'>
             <div className="w-full flex justify-between">
-              <span className="text-xl md:text-2xl text-gray-500 mb-4">Total Spent this month</span>
+              <span className="text-base lg:text-xl text-gray-500 mb-4">Total Spent this month</span>
             </div>
             <h3 className="text-white font-medium text-xl md:text-2xl mb-4 mt-[-10px] md:mt-0">
               <span className={totalSpent > total.monthly_goal && "text-red-400"}>{ formatToCOP(totalSpent) }</span> / { formatToCOP(total.monthly_goal) }

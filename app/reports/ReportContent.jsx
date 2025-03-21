@@ -9,7 +9,7 @@ import { Progress } from "@/components/ui/progress"
 const ReportContent = ({ report }) => {
   
   return (
-    <div className='w-full flex flex-col h-max lg:pl-[110px] pt-[90px] lg:py-[40px] px-[30px]'>
+    <div className='w-full flex flex-col h-max lg:pl-[110px] pt-[90px] lg:py-[40px] px-[20px]'>
       <h1 className='text-white fond-semibold text-2xl sm:text-3xl mb-6'>Last Month Report</h1>
       <div className='w-full h-full grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3'>
 
@@ -50,7 +50,7 @@ const ReportContent = ({ report }) => {
                     </div>
                   </div>
                   <div className='w-[10%] h-full flex items-center'>
-                    <span className='text-white text-sm'>{defineWidth(report.totalSpentByPaymentMethod)[index]}</span>
+                    <span className='text-white text-[0.6rem] xl:text-xs'>{formatToCOP(item.total)}</span>
                   </div>
                 </div>
                   ))

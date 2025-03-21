@@ -25,7 +25,7 @@ const TransactionsHistoryContent = ({ transactions }) => {
   const [transactionsState, setTransactionsState] = useState(transactions)
 
   const filterTransactions = useCallback(async () => {
-    const request1 = await fetch("http://localhost:4000/movements/filterTransactions/2025/" + monthSelected.toString());
+    const request1 = await fetch("https://finance-app-backend-stb9.onrender.com/movements/filterTransactions/2025/" + monthSelected.toString());
     const { transactions: newTransactions } = await request1.json();
     setTransactionsState(newTransactions)
   }, [monthSelected])
